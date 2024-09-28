@@ -1,0 +1,17 @@
+stages:
+  - test
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - .npm/
+
+test:
+  image: cypress/browsers:node-20.14.0-chrome-126.0.6478.114-1-ff-127.0.1-edge-126.0.2592.61-1
+  stage: test
+  script:
+    # install dependencies
+    - npm ci
+    # run Cypress tests
+    - npx cypress run --browser electron  

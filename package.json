@@ -4,13 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "cypress open --browser electron",
+    "cypress:run": "cypress run --browser electron",
+    "cypress:run:report": "cypress run --browser electron --reporter cypress-html-reporter"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@cypress/code-coverage": "^3.13.2",
+    "@shelex/cypress-allure-plugin": "^2.40.2",
     "cypress": "^13.15.0",
-    "cypress-cucumber-preprocessor": "^4.3.1"
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-html-reporter": "^11.0.0",
+    "cypress-multi-reporters": "^1.6.4",
+    "mocha": "^10.7.3",
+    "mochawesome": "^7.1.3"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepsDefinitions": true,
